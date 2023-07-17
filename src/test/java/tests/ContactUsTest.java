@@ -32,7 +32,7 @@ public class ContactUsTest extends BaseTest {
 
     @Test
     public void shouldNotSendEmptyContactForm() {
-        // implicit wait -GLOBALNY WAIT DLA WSZYSTKICH ELEMENTOW
+        // implicit wait - Global wait for all of the elements
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         headerPage.clickOnContactUsLink();
@@ -46,7 +46,7 @@ public class ContactUsTest extends BaseTest {
 //        }
 
 
-//        // Explicit Wait
+//        // Explicit Wait - for individual actions
 //        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 //        wait.until(ExpectedConditions.visibilityOf(contactUsPage.alertBoxContactUs));
 
