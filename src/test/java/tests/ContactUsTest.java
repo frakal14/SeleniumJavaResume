@@ -73,9 +73,11 @@ public class ContactUsTest extends BaseTest {
         message.setSubject(MessageSubject.WEBMASTER);
         message.setEmail("test@example.com");
         message.setOrderReference("123");
-        message.setMessage("text testowy");
-        //contactUsFormPage.sendContactUsForm(Message message);
+        message.setMessage("text for testing purposes");
 
+        contactUsPage.sendContactUsForm(message);
+
+        assertThat(contactUsPage.IsGreenAlertBoxDisplayed()).isTrue();
 
     }
 
