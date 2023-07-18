@@ -37,6 +37,9 @@ public class HeaderPage extends BasePage {
     @FindBy(linkText = "Sign in")
     WebElement signInButton;
 
+    @FindBy(className = "logout")
+    WebElement signOutButton;
+
 
     public void clickOnContactUsLink() {
         contactUsLink.click();
@@ -68,5 +71,9 @@ public class HeaderPage extends BasePage {
 
     public void clickOnSignInButton() {
         signInButton.click();
+    }
+
+    public String getSignOutButton() {
+        return signOutButton.getText();
     }
 }

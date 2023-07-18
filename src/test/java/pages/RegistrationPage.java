@@ -11,23 +11,20 @@ import org.openqa.selenium.support.ui.Select;
 public class RegistrationPage extends BasePage {
 
     private HeaderPage headerPage;
+    private LogInPage logInPage;
 
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
 
         headerPage = new HeaderPage(driver);
+        logInPage = new LogInPage(driver);
+
 
     }
 
 
 
-    // Authenticate page selectors:
-    @FindBy(id = "email_create")
-    WebElement emailAddressInput;
-
-    @FindBy(id = "SubmitCreate")
-    WebElement createAccountSubmitButton;
 
     //     YOUR PERSONAL INFORMATION SELECTORS
     @FindBy(xpath = "//input[@id='id_gender1']")
@@ -67,7 +64,7 @@ public class RegistrationPage extends BasePage {
 
 
     public void clickOnCreateAnAccountEmailInput() {
-        emailAddressInput.click();
+        logInPage.getEmailAddressInput().click();
     }
 
     public void clickOnGenderRadioButton() {
@@ -77,8 +74,8 @@ public class RegistrationPage extends BasePage {
     public void fillEmailAddressInputAndSubmit() {
         Faker faker = new Faker();
         String email = faker.internet().emailAddress();
-        emailAddressInput.sendKeys(email);
-        createAccountSubmitButton.click();
+        logInPage.getEmailAddressInput().sendKeys(email);
+        logInPage.getCreateAccountSubmitButton().click();
     }
 
 
