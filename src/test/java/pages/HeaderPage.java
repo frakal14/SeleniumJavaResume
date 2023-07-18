@@ -34,6 +34,9 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = "//a[text()='Women']")
     WebElement womanCategoryLink;
 
+    @FindBy(linkText = "Sign in")
+    WebElement signInButton;
+
 
     public void clickOnContactUsLink() {
         contactUsLink.click();
@@ -63,4 +66,7 @@ public class HeaderPage extends BasePage {
 
     }
 
+    public void clickOnSignInButton() {
+        signInButton.click();
+    }
 }
