@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.*;
 
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class HomePageTest extends BaseTest {
 
     private PopularItemsPage popularItemsPage;
@@ -26,6 +26,7 @@ public class HomePageTest extends BaseTest {
 
 
     @Test
+    @Order(1)
     public void ShouldSeeBestSellersItemsOnHomePage() {
         List<String> productNames = popularItemsPage.getProductNames();
 //        List<WebElement> xpath = driver.findElements(By.xpath("//*[@id='blockbestsellers']//*[@class='product-name']"));

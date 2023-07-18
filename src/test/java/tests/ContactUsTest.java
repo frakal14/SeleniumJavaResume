@@ -2,8 +2,7 @@ package tests;
 
 import enums.MessageSubject;
 import model.Message;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.ContactUsPage;
 import pages.HeaderPage;
@@ -12,6 +11,7 @@ import utils.PageTitleUtils;
 
 import static org.assertj.core.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class ContactUsTest extends BaseTest {
 
     private HeaderPage headerPage;
@@ -31,6 +31,7 @@ public class ContactUsTest extends BaseTest {
 
 
     @Test
+    @Order(1)
     public void shouldNotSendEmptyContactForm() {
         // implicit wait - Global wait for all of the elements
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -54,6 +55,7 @@ public class ContactUsTest extends BaseTest {
     }
 
     @Test
+    @Order(2)
     public void shouldNotSendContactUsFormWithEmailOnly() {
 
         headerPage.clickOnContactUsLink();
@@ -66,6 +68,7 @@ public class ContactUsTest extends BaseTest {
     }
 
     @Test
+    @Order(3)
     public void shouldSendContactUsFormWithValidData() {
         headerPage.clickOnContactUsLink();
 
