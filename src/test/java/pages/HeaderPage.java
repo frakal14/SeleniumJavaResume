@@ -40,6 +40,9 @@ public class HeaderPage extends BasePage {
     @FindBy(className = "logout")
     WebElement signOutButton;
 
+    @FindBy(xpath = "//a[@title='View my shopping cart']")
+    WebElement cartButton;
+
 
     public void clickOnContactUsLink() {
         contactUsLink.click();

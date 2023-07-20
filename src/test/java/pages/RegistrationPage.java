@@ -93,7 +93,7 @@ public class RegistrationPage extends BasePage {
         lastNameInput.sendKeys(registrationForm.getLastNameCustomer());
         passwordInput.sendKeys(registrationForm.getPassword());
 
-        //TODO: change selectByIndex TO MONTH enums
+        //TODO change selectByIndex TO MONTH enums
         Select day = new Select(dayDateOfBirthDropDown);
         day.selectByIndex(1);
 

@@ -33,9 +33,10 @@ public class WomanCategoryTest extends BaseTest {
 
     @Test
     @Order(1)
-    // TODO: Change list of strings to int and assert prices => 0
+    // TODO Change list of strings to int and assert prices => 0
     public void plpPricesAreNotNull() {
         headerPage.clickOnWomanCategoryPage();
+        System.out.println(womanCategoryPage.getStringProductPricesOnPlp());
 
         assertThat(womanCategoryPage.getStringProductPricesOnPlp()).isNotEmpty();
 
