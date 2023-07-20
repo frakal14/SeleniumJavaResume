@@ -60,7 +60,6 @@ public class MyAddressFormTest extends BaseTest {
         addressForm.setMobilePhone("090909090");
         addressForm.setAdditionalInformation("test");
         addressForm.setAddressAlias("Main test billing address");
-        myAccountPage.clickOnaAdMyFirstAddressButton();
         myAddressFormPage.clickOnAddressDeleteButton();
 
         assertThat(driver.getTitle().equals(MyAddressFormPageTitleUtils.MY_ADDRESS_PAGE_TITLE));
