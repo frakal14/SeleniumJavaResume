@@ -1,7 +1,6 @@
 package tests;
 
 import model.LogInForm;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HeaderPage;
@@ -10,7 +9,6 @@ import pages.MyAccountPage;
 import utils.MyAccountTitleUtils;
 import utils.PageTitleUtils;
 
-import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -46,6 +44,8 @@ public class MyAccountTest extends BaseTest {
         assertThat(MyAccountTitleUtils.MY_ACCOUNT_PAGE_TITLE).isEqualTo(MyAccountTitleUtils.MY_ACCOUNT_PAGE_TITLE);
 
     }
+
+
 
 
 }
