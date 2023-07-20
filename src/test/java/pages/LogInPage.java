@@ -1,13 +1,12 @@
 package pages;
 
 import model.LogInForm;
-import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static org.assertj.core.api.Assertions.*;
+
 
 
 public class LogInPage extends BasePage {

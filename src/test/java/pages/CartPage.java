@@ -27,6 +27,10 @@ public class CartPage extends  BasePage {
        return checkoutCartButton.getText();
     }
 
+    public void clickOnCartCheckoutButton () {
+        checkoutCartButton.click();
+    }
+
 
 
 

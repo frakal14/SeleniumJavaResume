@@ -1,9 +1,10 @@
 package tests;
 
+import model.LogInForm;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import pages.HeaderPage;
+import pages.*;
 import utils.PageTitleUtils;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,7 +13,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CheckoutTest extends BaseTest {
 
 
-    private HeaderPage headerPage;
+    private CartPage cartPage;
+    private LogInPage logInPage;
+    private WomanCategoryPage womanCategoryPage;
+    private CheckoutPage checkoutPage;
+
 
     @BeforeEach
     public void Setup() {
@@ -20,14 +25,29 @@ public class CheckoutTest extends BaseTest {
         driver.get(BASE_URL);
         assertThat(driver.getTitle().equals(PageTitleUtils.HOME_PAGE_TITLE));
 
-        headerPage = new HeaderPage(driver);
+        cartPage = new CartPage(driver);
+        logInPage = new LogInPage(driver);
+        womanCategoryPage = new WomanCategoryPage(driver);
+        checkoutPage = new CheckoutPage(driver);
 
     }
 
 
     @Test
     @Order(1)
-    public void loggedInUserIsAbletoEnterCheckout() {
+    public void loggedInUserIsAbleToEnterCheckout() {
+        logInPage.openLoginFormPage();
+        LogInForm logInForm = new LogInForm();
+        logInForm.setEmail("test@example.com");
+        logInForm.setPassword("Password123!");
+        logInPage.sendFilledInLogInFormWithData(logInForm);
+        womanCategoryPage.addWomanCategoryProductToCart();
+        cartPage.clickOnCartCheckoutButton();
+        checkoutPage.clickOnCheckoutAddressSubmitButton();
+
+        assertThat(checkoutPage.getCheckoutAddressSubmitButton().isDisplayed()).isTrue();
+
+
 
 
     }

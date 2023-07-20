@@ -43,9 +43,16 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = "//a[@title='View my shopping cart']")
     WebElement cartButton;
 
+    @FindBy (className = "account")
+    WebElement myAccountHeaderButton;
+
 
     public void clickOnContactUsLink() {
         contactUsLink.click();
+    }
+
+    public void clickOnMyAccountHeaderButton() {
+        myAccountHeaderButton.click();
     }
 
     public void sendSearchQuery() {

@@ -45,7 +45,6 @@ public class CartTest extends BaseTest {
 
         assertThat(cartPage.getCheckoutButtonElement().equals("Proceed to checkout")).isTrue();
 
-
     }
 
 
